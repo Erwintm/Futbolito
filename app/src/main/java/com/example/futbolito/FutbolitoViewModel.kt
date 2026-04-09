@@ -17,7 +17,7 @@ class FutbolitoViewModel : ViewModel(), SensorEventListener {
     var screenWidth = 0f
     var screenHeight = 0f
 
-    // Radio de la pelota 
+    // Radio de la pelota
     private val ballRadius = 35f
 
     override fun onSensorChanged(event: SensorEvent?) {
@@ -25,14 +25,14 @@ class FutbolitoViewModel : ViewModel(), SensorEventListener {
             val ax = event.values[0]
             val ay = event.values[1]
 
-            // Filtro simple para evitar vibraciones mínimas
+       
             if (Math.abs(ax) < 0.2f && Math.abs(ay) < 0.2f) return
 
-            // Sensibilidad: ajusta el '7f' si sientes que va muy lento o muy rápido
+            // Sensibilidad:
             val nextX = posX - (ax * 7f)
             val nextY = posY + (ay * 7f)
 
-            // Colisiones con bordes de la pantalla (tomando en cuenta el radio)
+            // Colisiones con bordes de la pantalla
             if (nextX >= ballRadius && nextX <= screenWidth - ballRadius) {
                 posX = nextX
             }
