@@ -41,7 +41,7 @@ class FutbolitoActivity : ComponentActivity() {
             Box(modifier = Modifier.fillMaxSize()) {
                 // El área de juego (Capa inferior)
                 Canvas(modifier = Modifier.fillMaxSize()) {
-                    // Inicializamos el tamaño de la pantalla en el ViewModel solo una vez
+
                     if (viewModel.screenWidth == 0f) {
                         viewModel.screenWidth = size.width
                         viewModel.screenHeight = size.height

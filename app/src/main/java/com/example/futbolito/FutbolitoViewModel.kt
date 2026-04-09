@@ -17,7 +17,7 @@ class FutbolitoViewModel : ViewModel(), SensorEventListener {
     var screenWidth = 0f
     var screenHeight = 0f
 
-    // Radio de la pelota (debe coincidir con el del Canvas)
+    // Radio de la pelota 
     private val ballRadius = 35f
 
     override fun onSensorChanged(event: SensorEvent?) {
@@ -48,13 +48,13 @@ class FutbolitoViewModel : ViewModel(), SensorEventListener {
         val center = screenWidth / 2
         val goalRange = (center - 150)..(center + 150)
 
-        // Gol en portería Superior (Visitante anota)
+
         if (posY <= ballRadius + 50 && posX in goalRange) {
             scoreVisitor++
             resetBall()
         }
 
-        // Gol en portería Inferior (Home anota)
+
         if (posY >= screenHeight - ballRadius - 50 && posX in goalRange) {
             scoreHome++
             resetBall()
