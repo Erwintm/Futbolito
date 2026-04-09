@@ -25,7 +25,7 @@ class FutbolitoViewModel : ViewModel(), SensorEventListener {
             val ax = event.values[0]
             val ay = event.values[1]
 
-       
+
             if (Math.abs(ax) < 0.2f && Math.abs(ay) < 0.2f) return
 
             // Sensibilidad:
